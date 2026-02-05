@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "census-extract"
+version = "1.0.0"
+description = "Extract data from Census Bureau Excel files for all 50 states + DC"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Census Extract Contributors"}
+]
+keywords = ["census", "data", "extraction", "excel", "states"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=6.0.0",
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+census-extract = "census_extract.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/3Blastoise3/ClaudeCode"
+Repository = "https://github.com/3Blastoise3/ClaudeCode"
+
+[tool.setuptools.packages.find]
+include = ["census_extract*"]
